@@ -2,6 +2,7 @@
   // editor
   "editor.wordWrap": "on",
   "editor.fontSize": 18,
+  "editor.fontFamily": "'Fira Code', sans serif",
   "editor.lineHeight": 30,
   "editor.tabSize": 2,
   "editor.bracketPairColorization.enabled": true,
