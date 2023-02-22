@@ -1,0 +1,10 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Cristian Sbardelotto <cristian.k.sbardelotto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.58.3"
+  }
+}
