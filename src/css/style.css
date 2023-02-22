@@ -2,4 +2,68 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #676c86;
+}
+body main {
+  height: 76vh;
+  padding: 5px;
+  display: grid;
+  background-color: #242a4b;
+}
+body main .display {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+body main .display .question {
+  color: #7f8084;
+}
+body main .display .solution {
+  font-size: 2.8rem;
+  color: #fff;
+}
+body main .keyboard {
+  display: flex;
+  flex-direction: row;
+}
+body main .keyboard .column {
+  display: flex;
+  flex-direction: column;
+}
+body main .keyboard .button {
+  font-size: 2.5rem;
+  border: 2px solid #242a4b;
+  color: #fff;
+  width: 6rem;
+  height: 6rem;
+}
+body main .keyboard .button:hover {
+  filter: invert(0.05);
+}
+body main .keyboard .button:active {
+  filter: invert(0.15);
+}
+body main .keyboard .button img {
+  width: 50%;
+}
+body main .keyboard .symbol {
+  background-color: #50556e;
+  color: #ff3764;
+}
+body main .keyboard .number {
+  background-color: #333a58;
+}
+body main .keyboard .equals {
+  height: 12rem;
+  background-color: #ff3764;
 }/*# sourceMappingURL=style.css.map */

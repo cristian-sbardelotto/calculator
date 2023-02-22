@@ -1,9 +1,100 @@
+$body-background: #676c86;
+$calculator-border-background: #242a4b;
+$calculator-background: #333a58;
+$symbols-background: #50556e;
+$symbols-color: #ff3764;
+
 @mixin reset {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: sans-serif;
 }
 
 * {
   @include reset();
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $body-background;
+
+  main {
+    height: 76vh;
+    padding: 5px;
+
+    display: grid;
+    // grid-template-rows: 1fr 3fr;
+
+    background-color: $calculator-border-background;
+
+    .display {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      padding: 1rem;
+
+      font-size: 1.5rem;
+
+      .question {
+        color: #7f8084;
+      }
+
+      .solution {
+        font-size: 2.8rem;
+        color: #fff;
+      }
+    }
+
+    .keyboard {
+      display: flex;
+      flex-direction: row;
+
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .button {
+        font-size: 2.5rem;
+        border: 2px solid $calculator-border-background;
+        color: #fff;
+
+        width: 6rem;
+        height: 6rem;
+
+        &:hover {
+          filter: invert(0.05);
+        }
+
+        &:active {
+          filter: invert(0.15);
+        }
+
+        img {
+          width: 50%;
+        }
+      }
+
+      .symbol {
+        background-color: $symbols-background;
+        color: $symbols-color;
+      }
+
+      .number {
+        background-color: $calculator-background;
+      }
+
+      .equals {
+        height: 12rem;
+        background-color: $symbols-color;
+      }
+    }
+  }
 }
