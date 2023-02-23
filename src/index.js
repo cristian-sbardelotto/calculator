@@ -1,27 +1,27 @@
-const buttons = document.querySelectorAll('button');
+// DOM Elements
+const displayButtons = document.querySelectorAll('button.display-button'); // Buttons that will appear in the display, (it excludes Backspace, Equals, and Clear button)
+const calculation = document.querySelector('main .display .calculation');
+const solution = document.querySelector('main .display .solution');
 const equalsButton = document.querySelector('.equals');
-const calculations = document.querySelector('main .display .calculation');
-let solution = document.querySelector('main .display .solution');
+const clearButton = document.querySelector('.clear');
 
-
-buttons.forEach(button => {
+// For each clicked button
+displayButtons.forEach(displayButton => {
   let calculationString = '';
 
-  // function clear() {
-  //   calculations.innerHTML = '';
-  // }
+  const addDigit = () => {
+    calculationString = displayButton.textContent;
+    calculation.innerText += calculationString;
+  };
 
-  function equals() {
-    let result = eval(calculations.textContent);
-    solution.innerHTML = eval(result);
+  const equals = () => (solution.innerHTML = eval(calculation.textContent));
 
-  }
+  const clear = () => {
+    calculation.innerHTML = '';
+    solution.innerHTML = '0';
+  };
 
-
-  button.addEventListener('click', () => {
-    calculationString = button.textContent;
-    calculations.innerText += calculationString;
-  });
-
-  equalsButton.addEventListener('click', () =>   equals());
+  displayButton.addEventListener('click', () => addDigit());
+  equalsButton.addEventListener('click', () => equals());
+  clearButton.addEventListener('click', () => clear());
 });
