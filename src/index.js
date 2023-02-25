@@ -1,27 +1,48 @@
 // DOM Elements
-const displayButtons = document.querySelectorAll('button.display-button'); // Buttons that will appear in the display, (it excludes Backspace, Equals, and Clear button)
+const buttons = document.querySelectorAll('button.button'); // Buttons that will appear in the display, (it excludes Backspace, Equals, and Clear button)
 const calculation = document.querySelector('main .display .calculation');
-const solution = document.querySelector('main .display .solution');
-const equalsButton = document.querySelector('.equals');
-const clearButton = document.querySelector('.clear');
+const solution = document.querySelector('main .display .solution span');
 
 // For each clicked button
-displayButtons.forEach(displayButton => {
-  let calculationString = '';
 
-  const addDigit = () => {
-    calculationString = displayButton.textContent;
-    calculation.innerText += calculationString;
-  };
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const insert = () => {
+      if (calculation.innerText.length >= 26) {
+        alert('You have exceeded the maximum calculation number');
+        return;
+      }
 
-  const equals = () => (solution.innerHTML = eval(calculation.textContent));
+      calculation.innerHTML += button.value;
+    };
 
-  const clear = () => {
-    calculation.innerHTML = '';
-    solution.innerHTML = '0';
-  };
+    const equals = () => {
+      solution.innerHTML = eval(calculation.textContent);
+    };
 
-  displayButton.addEventListener('click', () => addDigit());
-  equalsButton.addEventListener('click', () => equals());
-  clearButton.addEventListener('click', () => clear());
+    const clear = () => {
+      calculation.innerHTML = '';
+      solution.innerHTML = '0';
+    };
+
+    const remove = () => {
+      calculation.innerHTML = calculation.innerText.substring(
+        0,
+        calculation.innerText.length - 1
+      );
+    };
+
+    if (
+      button.classList.contains('number') ||
+      button.classList.contains('symbol')
+    ) {
+      insert();
+    } else if (button.classList.contains('equals')) {
+      equals();
+    } else if (button.value == 'c') {
+      clear();
+    } else if (button.value == '<-') {
+      remove();
+    }
+  });
 });
