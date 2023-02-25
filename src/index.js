@@ -1,7 +1,7 @@
 // DOM Elements
 const buttons = document.querySelectorAll('button.button'); // Buttons that will appear in the display, (it excludes Backspace, Equals, and Clear button)
-const calculation = document.querySelector('main .display .calculation');
-const solution = document.querySelector('main .display .solution span');
+const calculation = document.querySelector('main .display .calculation span');
+const solution = document.querySelector('main .display .solution input');
 
 // For each clicked button
 
@@ -9,20 +9,18 @@ buttons.forEach(button => {
   button.addEventListener('click', () => {
     const insert = () => {
       if (calculation.innerText.length >= 26) {
-        alert('You have exceeded the maximum calculation number');
+        alert('You have exceeded the maximum numbers in the calculation!');
         return;
       }
 
       calculation.innerHTML += button.value;
     };
 
-    const equals = () => {
-      solution.innerHTML = eval(calculation.textContent);
-    };
+    const equals = async () => (solution.value = eval(calculation.textContent));
 
     const clear = () => {
       calculation.innerHTML = '';
-      solution.innerHTML = '0';
+      solution.value = '0';
     };
 
     const remove = () => {

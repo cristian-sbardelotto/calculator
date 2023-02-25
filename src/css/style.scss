@@ -3,6 +3,7 @@ $calculator-border-background: #242a4b;
 $calculator-background: #333a58;
 $symbols-background: #50556e;
 $symbols-color: #ff3764;
+$display-font-color: #7f8084;
 
 @mixin reset {
   margin: 0;
@@ -24,12 +25,13 @@ body {
 
   background-color: $body-background;
 
-  main {
-    height: 76vh;
-    padding: 5px;
+  overflow: hidden;
+
+  main.calculator {
+    padding: 0 5px;
 
     display: grid;
-    // grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 5fr;
 
     background-color: $calculator-border-background;
 
@@ -38,23 +40,39 @@ body {
       flex-direction: column;
       align-items: end;
 
-      padding: 1rem;
+      padding: 0.5rem 0.5rem 0 0;
 
       font-size: 1.5rem;
 
-      .question {
-        color: #7f8084;
+      .calculation {
+        color: $display-font-color;
+
+        height: 1.6rem;
+        margin-bottom: 1rem;
       }
 
-      .solution {
-        font-size: 2.8rem;
+      .solution input {
+        text-align: end;
+
+        background: unset;
+        border: unset;
+
+        font-size: 1.9rem;
         color: #fff;
+
+        cursor: default;
+
+        &:focus {
+          outline: unset;
+        }
       }
     }
 
     .keyboard {
       display: flex;
       flex-direction: row;
+
+      height: 99%;
 
       .column {
         display: flex;
@@ -82,7 +100,11 @@ body {
         }
       }
 
-      .symbol {
+      .backspace {
+        background-color: $calculator-background;
+      }
+
+      .symbol, .clear {
         background-color: $symbols-background;
         color: $symbols-color;
       }

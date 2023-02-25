@@ -17,7 +17,7 @@
 
   // workbench
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "Monokai Classic Icons",
   "workbench.colorTheme": "Banner Contrast (rainglow)",
 
   // prettier

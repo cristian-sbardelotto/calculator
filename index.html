@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="icon" href="./public/favicon.svg">
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+  <main class="calculator">
+    <div class="display">
+      <div class="calculation">
+        <span></span>
+      </div>
+
+      <div class="solution">
+        <input type="text" value="0" readonly/>
+      </div>
+    </div>
+
+    <div class="keyboard">
+      <div class="column">
+        <button class="button clear" value="c">C</button>
+        <button class="button number" value="7">7</button>
+        <button class="button number" value="4">4</button>
+        <button class="button number" value="1">1</button>
+        <button class="button number" value="0">0</button>
+      </div>
+
+      <div class="column">
+        <button class="button symbol" value="%">%</button>
+        <button class="button number" value="8">8</button>
+        <button class="button number" value="5">5</button>
+        <button class="button number" value="2">2</button>
+        <button class="button number" value=".">.</button>
+      </div>
+
+      <div class="column">
+        <button class="button symbol" value="/">/</button>
+        <button class="button number" value="9">9</button>
+        <button class="button number" value="6">6</button>
+        <button class="button number" value="3">3</button>
+        <button class="button backspace" value="<-"><img src="./src/assets/backspace-icon.svg"
+            alt="backspace Icon"></button>
+      </div>
+
+      <div class="column">
+        <button class="button symbol" value="*">*</button>
+        <button class="button symbol" value="-">-</button>
+        <button class="button symbol" value="+">+</button>
+        <button class="button equals" value="=">=</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="./src/index.js"></script>
+</body>
+
+</html>

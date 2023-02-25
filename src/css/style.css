@@ -11,59 +11,73 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #676c86;
+  overflow: hidden;
 }
-body main {
-  height: 76vh;
-  padding: 5px;
+body main.calculator {
+  padding: 0 5px;
   display: grid;
+  grid-template-rows: 1fr 5fr;
   background-color: #242a4b;
 }
-body main .display {
+body main.calculator .display {
   display: flex;
   flex-direction: column;
   align-items: end;
-  padding: 1rem;
+  padding: 0.5rem 0.5rem 0 0;
   font-size: 1.5rem;
 }
-body main .display .question {
+body main.calculator .display .calculation {
   color: #7f8084;
+  height: 1.6rem;
+  margin-bottom: 1rem;
 }
-body main .display .solution {
-  font-size: 2.8rem;
+body main.calculator .display .solution input {
+  text-align: end;
+  background: unset;
+  border: unset;
+  font-size: 1.9rem;
   color: #fff;
+  cursor: default;
 }
-body main .keyboard {
+body main.calculator .display .solution input:focus {
+  outline: unset;
+}
+body main.calculator .keyboard {
   display: flex;
   flex-direction: row;
+  height: 99%;
 }
-body main .keyboard .column {
+body main.calculator .keyboard .column {
   display: flex;
   flex-direction: column;
 }
-body main .keyboard .button {
+body main.calculator .keyboard .button {
   font-size: 2.5rem;
   border: 2px solid #242a4b;
   color: #fff;
   width: 6rem;
   height: 6rem;
 }
-body main .keyboard .button:hover {
+body main.calculator .keyboard .button:hover {
   filter: invert(0.05);
 }
-body main .keyboard .button:active {
+body main.calculator .keyboard .button:active {
   filter: invert(0.15);
 }
-body main .keyboard .button img {
+body main.calculator .keyboard .button img {
   width: 50%;
 }
-body main .keyboard .symbol {
+body main.calculator .keyboard .backspace {
+  background-color: #333a58;
+}
+body main.calculator .keyboard .symbol, body main.calculator .keyboard .clear {
   background-color: #50556e;
   color: #ff3764;
 }
-body main .keyboard .number {
+body main.calculator .keyboard .number {
   background-color: #333a58;
 }
-body main .keyboard .equals {
+body main.calculator .keyboard .equals {
   height: 12rem;
   background-color: #ff3764;
 }/*# sourceMappingURL=style.css.map */
